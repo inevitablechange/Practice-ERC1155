@@ -1,4 +1,4 @@
-import { Box, GridItem, Image, useEditable } from "@chakra-ui/react";
+import { Box, GridItem, Image } from "@chakra-ui/react";
 import axios from "axios";
 import { FC, useEffect, useState } from "react";
 
