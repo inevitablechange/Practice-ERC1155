@@ -91,7 +91,7 @@ const Home: FC = () => {
             </Grid>
           </>
         ) : (
-          <Box pos="relative" w={[80, 80, 160]}>
+          <Box pos="relative" w={[320, 320, 640]} mt={[4, 4, 8]}>
             <Box
               pos="absolute"
               top={0}
