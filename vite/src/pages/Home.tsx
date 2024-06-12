@@ -14,7 +14,7 @@ import PuzzleCard from "../components/PuzzleCard";
 
 const Home: FC = () => {
   const navigate = useNavigate();
-  const [mintedList, setMintedList] = useState<boolean[]>([]);
+  const [mintedList, setMintedList] = useState<number[]>([]);
   const [progress, setProgress] = useState<number>(0);
 
   const { signer, mintContract } = useOutletContext<OutletContext>();
@@ -23,9 +23,9 @@ const Home: FC = () => {
     try {
       if (!signer || !mintContract) return;
 
-      const response = await mintContract.checkNfts(signer.address);
+      const response = await mintContract.balanceOfNfts(signer.address);
 
-      const temp = response.map((v: boolean) => v);
+      const temp = response.map((v: bigint) => Number(v));
 
       setMintedList(temp);
     } catch (error) {
@@ -89,7 +89,7 @@ const Home: FC = () => {
             </Flex>
             <Grid templateColumns={"repeat(4, 1fr)"}>
               {mintedList.map((v, i) => (
-                <PuzzleCard key={i} index={i} isMinted={v} />
+                <PuzzleCard key={i} index={i} balance={v} />
               ))}
             </Grid>
           </>
