@@ -38,12 +38,10 @@ const PuzzleCard: FC<PuzzleCardProps> = ({ index, isMinted }) => {
           bgColor="rgba(0,0,0,0.5)"
         />
       )}
-      {nftMetadata && (
-        <Image
-          src={`/images/puzzle/${index + 1}.png`}
-          alt={`Save the SEA #${index + 1}`}
-        />
-      )}
+      <Image
+        src={`/images/puzzle/${index + 1}.png`}
+        alt={`Save the SEA #${index + 1}`}
+      />
     </GridItem>
   );
 };
