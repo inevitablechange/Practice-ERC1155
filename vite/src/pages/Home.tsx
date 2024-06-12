@@ -81,7 +81,10 @@ const Home: FC = () => {
               gap={[2, 2, 4]}
               alignItems="center"
             >
-              <Text fontSize={[16, 16, 24]}>진행도</Text>
+              <Text fontSize={[16, 16, 24]} w={20}>
+                {progress}%
+              </Text>
+
               <Progress hasStripe value={progress} h={[4, 4, 8]} flexGrow={1} />
             </Flex>
             <Grid templateColumns={"repeat(4, 1fr)"}>
